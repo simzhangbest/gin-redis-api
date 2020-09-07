@@ -17,7 +17,7 @@ func err_handler(err error) {
 }
 
 
-func main() {
+func simstart() {
 	client := redis.NewClient(&redis.Options{
 		Addr:     "114.212.10.200:6379",
 		Password: "",
@@ -84,4 +84,8 @@ func main() {
 
 	})
 	router.Run(":8070") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+}
+
+func main()  {
+	simstart()
 }
